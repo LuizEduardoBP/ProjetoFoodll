@@ -6,6 +6,10 @@ public class Foodll implements Food {
 	
 	private ArrayList<Restaurante>Restaurantes = new ArrayList<>();
 	private ArrayList<Restricoes>restricoes = new ArrayList<>();
+	private ArrayList<Cliente>Clientes = new ArrayList<>();
+	private ArrayList<Comida>Comidas = new ArrayList<>();
+	private ArrayList<Cardapio>Cardapios = new ArrayList<>();
+
 
 	@Override
 	public Restaurante addRestaurante(int id, String nome, int telefone) {
@@ -18,15 +22,18 @@ public class Foodll implements Food {
 	}
 
 	@Override
-	public void removRestaurante(int id) {
+	public void removRestaurante(Integer id) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public Restricoes addrestricoes(int id, String tipo) {
-		// TODO Auto-generated method stub
-		return null;
+		Restricoes n = new Restricoes(id, tipo, null);
+		n.setId(id);
+		n.setTipo(tipo);
+		restricoes.add(n);
+		return n;
 	}
 
 	@Override
@@ -37,8 +44,11 @@ public class Foodll implements Food {
 
 	@Override
 	public Cliente addCliente(int id, String nome) {
-		// TODO Auto-generated method stub
-		return null;
+		Cliente c = new Cliente(nome, id, id, restricoes, null);
+		c.setNome(nome);
+		c.setId(id);
+		Clientes.add(c);
+		return c;
 	}
 
 	@Override
@@ -49,8 +59,12 @@ public class Foodll implements Food {
 
 	@Override
 	public Comida addComida(int id, String nome, String ingredientes) {
-		// TODO Auto-generated method stub
-		return null;
+		Comida b = new Comida(id, ingredientes, ingredientes, id, ingredientes);
+		b.setId(id);
+		b.setNome(nome);
+		b.setIngredientes(ingredientes);
+		Comidas.add(b);
+		return b;
 	}
 
 	@Override
@@ -61,8 +75,10 @@ public class Foodll implements Food {
 
 	@Override
 	public Cardapio addCardapio(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Cardapio l = new Cardapio(id, Comidas, restricoes);
+		l.setId(id);
+		Cardapios.add(l);
+		return l;
 	}
 
 	@Override

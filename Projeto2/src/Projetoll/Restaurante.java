@@ -3,15 +3,15 @@ package Projetoll;
 import java.util.ArrayList;
 
 public class Restaurante {
-	private int id;
+	private Integer id;
 	private String nome;
 	private int telefone;
 	private ArrayList<Comida>Tem;
 	private ArrayList<Cliente>Possui;
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNome() {

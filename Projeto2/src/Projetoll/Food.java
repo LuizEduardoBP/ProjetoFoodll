@@ -2,7 +2,7 @@ package Projetoll;
 
 public interface Food {
 	public Restaurante addRestaurante(int id, String nome, int telefone);
-	public void removRestaurante(int id);
+	public void removRestaurante(Integer id);
 	
 	
 	public Restricoes addrestricoes(int id, String tipo);
