@@ -2,8 +2,11 @@ package Projetoll;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Foodll implements Food {
-	
 	private ArrayList<Restaurante>Restaurantes = new ArrayList<>();
 	private ArrayList<Restricoes>restricoes = new ArrayList<>();
 	private ArrayList<Cliente>Clientes = new ArrayList<>();

@@ -1,6 +1,12 @@
 package Projetoll;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+
 public class Comida {
+	@Id
 	private Integer id;
 	private String nome;
 	private String restricoes;

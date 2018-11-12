@@ -2,8 +2,14 @@ package Projetoll;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+
 public class Cliente {
 	private String nome;
+	@Id
 	private int id;
 	private Integer endereco;
 	private ArrayList<Restricoes>tem;

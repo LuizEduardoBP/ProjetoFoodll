@@ -1,5 +1,9 @@
 package Projetoll;
 
+import javax.persistence.Entity;
+
+@Entity
+
 public class Endereco {
 	private String rua;
 	private Integer numero;

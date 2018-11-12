@@ -2,7 +2,13 @@ package Projetoll;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+
 public class Cardapio {
+	@Id
 	private Integer id;
 	private ArrayList<Comida>Tem;
 	private ArrayList<Restricoes>filtrar;
