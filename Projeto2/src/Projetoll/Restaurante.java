@@ -1,12 +1,23 @@
 	package Projetoll;
 
 import java.util.Set;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 public class Restaurante {
 	private Integer id;
 	private String nome;
 	private int telefone;
+	@ManyToMany
+	@JoinTable(
+			name = "restaurante_comida",
+			joinColumns = @JoinColumn(name = "restaurante_id"),
+			inverseJoinColumns = @JoinColumn(name = "comida_id"))
 	private Set<Comida>Tem;
+	@ManyToOne
+	
 	private Set<Cliente>Possui;
 	public Integer getId() {
 		return id;

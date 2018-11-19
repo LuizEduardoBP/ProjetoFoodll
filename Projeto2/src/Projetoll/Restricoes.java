@@ -4,11 +4,19 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Restricoes {
 	private int id;
 	private String tipo;
+	@ManyToMany
+	@JoinTable(
+			name = "restricoes_comida",
+			joinColumns = @JoinColumn(name = "restricoes_id"),
+			inverseJoinColumns = @JoinColumn(name = "comida_id"))
 	private Set<Comida>Ter;
 	public int getId() {
 		return id;
