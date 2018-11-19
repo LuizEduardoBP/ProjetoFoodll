@@ -9,7 +9,6 @@ import javax.persistence.Id;
 
 public class Cliente {
 	private String nome;
-	@Id
 	private int id;
 	private Integer endereco;
 	private ArrayList<Restricoes>tem;

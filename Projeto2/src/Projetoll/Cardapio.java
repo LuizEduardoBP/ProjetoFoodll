@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 
 public class Cardapio {
-	@Id
 	private Integer id;
+	@ManyToMany
 	private ArrayList<Comida>Tem;
+	@ManyToMany
 	private ArrayList<Restricoes>filtrar;
 	public Integer getId() {
 		return id;

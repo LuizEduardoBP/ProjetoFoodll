@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Restricoes {
-	@Id
 	private int id;
 	private String tipo;
 	private ArrayList<Comida>Ter;
