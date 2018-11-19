@@ -16,7 +16,8 @@ public class Restricoes {
 	@JoinTable(
 			name = "restricoes_comida",
 			joinColumns = @JoinColumn(name = "restricoes_id"),
-			inverseJoinColumns = @JoinColumn(name = "comida_id"))
+			inverseJoinColumns = @JoinColumn(name = "comida_id"))	
+	
 	private Set<Comida>Ter;
 	public int getId() {
 		return id;
