@@ -1,13 +1,13 @@
-package Projetoll;
+	package Projetoll;
 
-import java.util.ArrayList;
+import java.util.Set;
 
 public class Restaurante {
 	private Integer id;
 	private String nome;
 	private int telefone;
-	private ArrayList<Comida>Tem;
-	private ArrayList<Cliente>Possui;
+	private Set<Comida>Tem;
+	private Set<Cliente>Possui;
 	public Integer getId() {
 		return id;
 	}
@@ -26,16 +26,16 @@ public class Restaurante {
 	public void setTelefone(Integer telefone) {
 		this.telefone = telefone;
 	}
-	public ArrayList<Comida> getTem() {
+	public Set<Comida> getTem() {
 		return Tem;
 	}
-	public void setTem(ArrayList<Comida> tem) {
+	public void setTem(Set<Comida> tem) {
 		Tem = tem;
 	}
-	public ArrayList<Cliente> getPossui() {
+	public Set<Cliente> getPossui() {
 		return Possui;
 	}
-	public void setPossui(ArrayList<Cliente> possui) {
+	public void setPossui(Set<Cliente> possui) {
 		Possui = possui;
 	}
 	@Override
@@ -84,7 +84,7 @@ public class Restaurante {
 			return false;
 		return true;
 	}
-	public Restaurante(int id, String nome, int telefone, ArrayList<Comida> tem, ArrayList<Cliente> possui) {
+	public Restaurante(int id, String nome, int telefone, Set<Comida> tem, Set<Cliente> possui) {
 		super();
 		this.id = id;
 		this.nome = nome;

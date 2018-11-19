@@ -1,6 +1,6 @@
 package Projetoll;
 
-import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Restricoes {
 	private int id;
 	private String tipo;
-	private ArrayList<Comida>Ter;
+	private Set<Comida>Ter;
 	public int getId() {
 		return id;
 	}
@@ -22,10 +22,10 @@ public class Restricoes {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public ArrayList<Comida> getTer() {
+	public Set<Comida> getTer() {
 		return Ter;
 	}
-	public void setTer(ArrayList<Comida> ter) {
+	public void setTer(Set<Comida> ter) {
 		Ter = ter;
 	}
 	@Override
@@ -64,7 +64,7 @@ public class Restricoes {
 			return false;
 		return true;
 	}
-	public Restricoes(int id, String tipo, ArrayList<Comida> ter) {
+	public Restricoes(int id, String tipo, Set<Comida> ter) {
 		super();
 		this.id = id;
 		this.tipo = tipo;

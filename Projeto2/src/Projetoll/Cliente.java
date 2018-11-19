@@ -1,9 +1,12 @@
 package Projetoll;
 
-import java.util.ArrayList;
 
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 
@@ -11,8 +14,13 @@ public class Cliente {
 	private String nome;
 	private int id;
 	private Integer endereco;
-	private ArrayList<Restricoes>tem;
-	private ArrayList<Comida>Pedir;
+	@ManyToMany
+	@JoinTable(
+			name = "cliente_restricoes",
+			joinColumns = @JoinColumn(name = "cliente_id"),
+			inverseJoinColumns = @JoinColumn(name = "restricoes_id"))
+	private Set<Restricoes>tem;
+	private Set<Comida>Pedir;
 	public String getNome() {
 		return nome;
 	}
@@ -31,16 +39,16 @@ public class Cliente {
 	public void setEndereco(Integer endereco) {
 		this.endereco = endereco;
 	}
-	public ArrayList<Restricoes> getTem() {
+	public Set<Restricoes> getTem() {
 		return tem;
 	}
-	public void setTem(ArrayList<Restricoes> tem) {
+	public void setTem(Set<Restricoes> tem) {
 		this.tem = tem;
 	}
-	public ArrayList<Comida> getPedir() {
+	public Set<Comida> getPedir() {
 		return Pedir;
 	}
-	public void setPedir(ArrayList<Comida> pedir) {
+	public void setPedir(Set<Comida> pedir) {
 		Pedir = pedir;
 	}
 	@Override
@@ -92,7 +100,7 @@ public class Cliente {
 			return false;
 		return true;
 	}
-	public Cliente(String nome, int id, Integer endereco, ArrayList<Restricoes> tem, ArrayList<Comida> pedir) {
+	public Cliente(String nome, int id, Integer endereco, Set<Restricoes> tem, Set<Comida> pedir) {
 		super();
 		this.nome = nome;
 		this.id = id;

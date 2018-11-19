@@ -1,9 +1,10 @@
 package Projetoll;
 
-import java.util.ArrayList;
-
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
@@ -11,25 +12,33 @@ import javax.persistence.ManyToMany;
 public class Cardapio {
 	private Integer id;
 	@ManyToMany
-	private ArrayList<Comida>Tem;
+	@JoinTable(
+			name = "cardapio_comida",
+			joinColumns = @JoinColumn(name = "cardapio_id"),
+			inverseJoinColumns = @JoinColumn(name = "comida_id"))
+	private Set<Comida>Tem;
 	@ManyToMany
-	private ArrayList<Restricoes>filtrar;
+	@JoinTable(
+			name = "cardapio_restricoes",
+			joinColumns = @JoinColumn(name = "cardapio_id"),
+			inverseJoinColumns = @JoinColumn(name = "restricoes_id"))
+	private Set<Restricoes>filtrar;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public ArrayList<Comida> getTem() {
+	public Set<Comida> getTem() {
 		return Tem;
 	}
-	public void setTem(ArrayList<Comida> tem) {
+	public void setTem(Set<Comida> tem) {
 		Tem = tem;
 	}
-	public ArrayList<Restricoes> getFiltrar() {
+	public Set<Restricoes> getFiltrar() {
 		return filtrar;
 	}
-	public void setFiltrar(ArrayList<Restricoes> filtrar) {
+	public void setFiltrar(Set<Restricoes> filtrar) {
 		this.filtrar = filtrar;
 	}
 	@Override
@@ -71,7 +80,7 @@ public class Cardapio {
 			return false;
 		return true;
 	}
-	public Cardapio(Integer id, ArrayList<Comida> tem, ArrayList<Restricoes> filtrar) {
+	public Cardapio(Integer id, Set<Comida> tem, Set<Restricoes> filtrar) {
 		super();
 		this.id = id;
 		Tem = tem;
