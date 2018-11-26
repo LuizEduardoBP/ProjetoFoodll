@@ -12,7 +12,7 @@ import javax.persistence.ManyToMany;
 
 public class Cliente {
 	private String nome;
-	private int id;
+	private long id;
 	private Integer endereco;
 	@ManyToMany
 	@JoinTable(
@@ -30,8 +30,8 @@ public class Cliente {
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(long l) {
+		this.id = l;
 	}
 	public Integer getEndereco() {
 		return endereco;
