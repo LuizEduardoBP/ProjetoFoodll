@@ -10,8 +10,8 @@ public class Main {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("projeto");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
-		Cliente c = new Cliente ("Barack Obama", 1);
-		c.setNome("Marcelo D2");
+		Cliente c = new Cliente ("austronauta", 4);
+		c.setNome("Pericles");
 		em.persist(c);
 		em.getTransaction().commit();
 		em.close();
