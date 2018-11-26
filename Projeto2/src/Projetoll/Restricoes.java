@@ -3,6 +3,7 @@ package Projetoll;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -10,19 +11,21 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Restricoes {
-	private int id;
+	@GeneratedValue
+	@Id
+	private Long id;
 	private String tipo;
 	@ManyToMany
 	@JoinTable(
 			name = "restricoes_comida",
 			joinColumns = @JoinColumn(name = "restricoes_id"),
 			inverseJoinColumns = @JoinColumn(name = "comida_id"))	
-	
 	private Set<Comida>Ter;
-	public int getId() {
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getTipo() {
@@ -46,7 +49,7 @@ public class Restricoes {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((Ter == null) ? 0 : Ter.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
@@ -64,7 +67,10 @@ public class Restricoes {
 				return false;
 		} else if (!Ter.equals(other.Ter))
 			return false;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (tipo == null) {
 			if (other.tipo != null)
@@ -73,12 +79,13 @@ public class Restricoes {
 			return false;
 		return true;
 	}
-	public Restricoes(int id, String tipo, Set<Comida> ter) {
+	public Restricoes(Long id, String tipo, Set<Comida> ter) {
 		super();
 		this.id = id;
 		this.tipo = tipo;
 		Ter = ter;
 	}
+
 	
 
 }

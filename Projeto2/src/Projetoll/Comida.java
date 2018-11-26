@@ -1,22 +1,18 @@
 package Projetoll;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-
 public class Comida {
-	private Integer id;
+	@GeneratedValue
+	@Id
+	private Long id;
 	private String nome;
 	private String restricoes;
 	private Integer preco;
 	private String ingredientes;
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getNome() {
 		return nome;
 	}
@@ -93,7 +89,7 @@ public class Comida {
 			return false;
 		return true;
 	}
-	public Comida(Integer id, String nome, String restricoes, Integer preco, String ingredientes) {
+	public Comida(Long id, String nome, String restricoes, Integer preco, String ingredientes) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -101,5 +97,5 @@ public class Comida {
 		this.preco = preco;
 		this.ingredientes = ingredientes;
 	}
-	
+
 }

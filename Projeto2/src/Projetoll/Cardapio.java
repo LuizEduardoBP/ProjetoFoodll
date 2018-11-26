@@ -2,49 +2,53 @@ package Projetoll;
 
 import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
-
 public class Cardapio {
-	private Integer id;
+	@GeneratedValue
+	@Id
+	private Long id;
 	@ManyToMany
-	@JoinTable(
-			name = "cardapio_comida",
-			joinColumns = @JoinColumn(name = "cardapio_id"),
-			inverseJoinColumns = @JoinColumn(name = "comida_id"))
-	private Set<Comida>Tem;
+	@JoinTable(name = "cardapio_comida", joinColumns = @JoinColumn(name = "cardapio_id"), inverseJoinColumns = @JoinColumn(name = "comida_id"))
+	private Set<Comida> Tem;
 	@ManyToMany
-	@JoinTable(
-			name = "cardapio_restricoes",
-			joinColumns = @JoinColumn(name = "cardapio_id"),
-			inverseJoinColumns = @JoinColumn(name = "restricoes_id"))
-	private Set<Restricoes>filtrar;
-	public Integer getId() {
+	@JoinTable(name = "cardapio_restricoes", joinColumns = @JoinColumn(name = "cardapio_id"), inverseJoinColumns = @JoinColumn(name = "restricoes_id"))
+	private Set<Restricoes> filtrar;
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+
+	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public Set<Comida> getTem() {
 		return Tem;
 	}
+
 	public void setTem(Set<Comida> tem) {
 		Tem = tem;
 	}
+
 	public Set<Restricoes> getFiltrar() {
 		return filtrar;
 	}
+
 	public void setFiltrar(Set<Restricoes> filtrar) {
 		this.filtrar = filtrar;
 	}
+
 	@Override
 	public String toString() {
 		return "Cardapio [id=" + id + ", Tem=" + Tem + ", filtrar=" + filtrar + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -54,6 +58,7 @@ public class Cardapio {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -80,13 +85,14 @@ public class Cardapio {
 			return false;
 		return true;
 	}
-	public Cardapio(Integer id, Set<Comida> tem, Set<Restricoes> filtrar) {
+
+	public Cardapio(Long id, Set<Comida> tem, Set<Restricoes> filtrar) {
 		super();
 		this.id = id;
 		Tem = tem;
 		this.filtrar = filtrar;
 	}
-	
+
 	
 
 }

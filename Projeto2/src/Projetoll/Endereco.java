@@ -1,12 +1,17 @@
 package Projetoll;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-
 public class Endereco {
+	@GeneratedValue
+	@Id
+	private Long id;
 	private String rua;
 	private Integer numero;
+
 	public Integer getNumero() {
 		return numero;
 	}

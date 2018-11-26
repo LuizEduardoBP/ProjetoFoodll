@@ -1,24 +1,24 @@
 package Projetoll;
 
 public interface Food {
-	public Restaurante addRestaurante(int id, String nome, int telefone);
-	public void removRestaurante(Integer id);
+	public Restaurante addRestaurante(Long id, String nome, int telefone);
+	public void removRestaurante(Long id);
 	
 	
-	public Restricoes addrestricoes(int id, String tipo);
-	public void removRestricoes(int id);
+	public Restricoes addrestricoes(long id, String tipo);
+	public void removRestricoes(Long id);
 	
 	
-	public Cliente addCliente(int id, String nome);
-	public void removeCliente(int id);
+	public Cliente addCliente(Long id, String nome);
+	public void removeCliente(Long id);
 	
 	
-	public Comida addComida(int id, String nome, String ingredientes);
-	public void removComida(int id);
+	public Comida addComida(Long id, String nome, String ingredientes);
+	public void removComida(Long id);
 	
 	
-	public Cardapio addCardapio(int id);
-	public void removcardapio(int id);
+	public Cardapio addCardapio(Long id);
+	public void removcardapio(long id);
 	
 
 }

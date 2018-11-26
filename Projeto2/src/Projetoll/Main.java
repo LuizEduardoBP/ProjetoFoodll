@@ -7,16 +7,14 @@ import javax.persistence.Persistence;
 public class Main {
 
 	public static void main(String[] args) {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("academico");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("projeto");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
-		Cliente c = new Cliente(null, 0, null, null, null);
-		c.setId(1l);
-		c.setNome("Hugo");
+		Cliente c = new Cliente ("Barack Obama", 1);
+		c.setNome("Marcelo D2");
 		em.persist(c);
 		em.getTransaction().commit();
 		em.close();
 		factory.close();
 	}
-	
 }

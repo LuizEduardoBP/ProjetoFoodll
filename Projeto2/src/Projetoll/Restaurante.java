@@ -1,13 +1,18 @@
 	package Projetoll;
 
 import java.util.Set;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 public class Restaurante {
-	private Integer id;
+	@GeneratedValue
+	@Id
+	private Long id;
 	private String nome;
 	private int telefone;
 	@ManyToMany
@@ -17,13 +22,16 @@ public class Restaurante {
 			inverseJoinColumns = @JoinColumn(name = "comida_id"))
 	private Set<Comida>Tem;
 	@ManyToOne
-	
 	private Set<Cliente>Possui;
-	public Integer getId() {
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
+	}
+	public void setTelefone(int telefone) {
+		this.telefone = telefone;
 	}
 	public String getNome() {
 		return nome;
@@ -60,7 +68,7 @@ public class Restaurante {
 		int result = 1;
 		result = prime * result + ((Possui == null) ? 0 : Possui.hashCode());
 		result = prime * result + ((Tem == null) ? 0 : Tem.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + telefone;
 		return result;
@@ -84,7 +92,10 @@ public class Restaurante {
 				return false;
 		} else if (!Tem.equals(other.Tem))
 			return false;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (nome == null) {
 			if (other.nome != null)
@@ -95,7 +106,7 @@ public class Restaurante {
 			return false;
 		return true;
 	}
-	public Restaurante(int id, String nome, int telefone, Set<Comida> tem, Set<Cliente> possui) {
+	public Restaurante(Long id, String nome, int telefone, Set<Comida> tem, Set<Cliente> possui) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -103,5 +114,4 @@ public class Restaurante {
 		Tem = tem;
 		Possui = possui;
 	}
-	
 }
