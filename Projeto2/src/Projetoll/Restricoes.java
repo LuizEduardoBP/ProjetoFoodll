@@ -85,6 +85,10 @@ public class Restricoes implements Identificavel{
 		this.tipo = tipo;
 		Ter = ter;
 	}
+	public Restricoes() {
+		// TODO Auto-generated constructor stub
+	}
+
 
 	
 

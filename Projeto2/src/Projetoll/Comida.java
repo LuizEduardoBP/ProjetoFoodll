@@ -13,6 +13,7 @@ public class Comida implements Identificavel {
 	private String restricoes;
 	private Integer preco;
 	private String ingredientes;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -96,6 +97,7 @@ public class Comida implements Identificavel {
 			return false;
 		return true;
 	}
+
 	public Comida(Long id, String nome, String restricoes, Integer preco, String ingredientes) {
 		super();
 		this.id = id;
@@ -105,4 +107,9 @@ public class Comida implements Identificavel {
 		this.ingredientes = ingredientes;
 	}
 
+	public Comida() {
+		// TODO Auto-generated constructor stub
+	}
 }
+
+
