@@ -9,7 +9,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-public class Restaurante {
+public class Restaurante implements Identificavel{
 	@GeneratedValue
 	@Id
 	private Long id;
@@ -24,7 +24,7 @@ public class Restaurante {
 	@ManyToOne
 	private Set<Cliente>Possui;
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 	public void setId(Long id) {

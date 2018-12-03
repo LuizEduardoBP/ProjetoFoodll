@@ -7,10 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Cliente {
-	@GeneratedValue
+public class Cliente implements Identificavel {
+	@GeneratedValue(generator="seqCliente")
+	@SequenceGenerator(name="seqCliente", sequenceName="seq_cliente")
 	@Id
 	private Long id;
 	private String nome;
@@ -53,11 +55,17 @@ public class Cliente {
 	public void setTem(Set<Restricoes> tem) {
 		this.tem = tem;
 	}
-
-	public Cliente(String nome, Integer endereco) {
+	
+	public Cliente(Long id, String nome, Integer endereco, Set<Restricoes> tem, Set<Comida> pedir) {
 		super();
+		this.id = id;
 		this.nome = nome;
 		this.endereco = endereco;
+		this.tem = tem;
+		this.pedir = pedir;
+	}
+
+	public Cliente() {
 	}
 
 	@Override

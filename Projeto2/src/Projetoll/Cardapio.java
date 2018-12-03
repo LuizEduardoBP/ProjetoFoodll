@@ -9,7 +9,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Cardapio {
+public class Cardapio implements Identificavel {
 	@GeneratedValue
 	@Id
 	private Long id;
@@ -20,10 +20,10 @@ public class Cardapio {
 	@JoinTable(name = "cardapio_restricoes", joinColumns = @JoinColumn(name = "cardapio_id"), inverseJoinColumns = @JoinColumn(name = "restricoes_id"))
 	private Set<Restricoes> filtrar;
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-
+	
 	public void setId(Long id) {
 		this.id = id;
 	}

@@ -5,13 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Endereco {
+public class Endereco implements Identificavel{
 	@GeneratedValue
 	@Id
 	private Long id;
 	private String rua;
 	private Integer numero;
 
+	public long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public Integer getNumero() {
 		return numero;
 	}

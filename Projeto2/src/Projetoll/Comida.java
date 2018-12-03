@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Comida {
+public class Comida implements Identificavel {
 	@GeneratedValue
 	@Id
 	private Long id;
@@ -15,6 +15,13 @@ public class Comida {
 	private String ingredientes;
 	public String getNome() {
 		return nome;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;

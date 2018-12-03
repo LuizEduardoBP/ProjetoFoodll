@@ -10,7 +10,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Restricoes {
+public class Restricoes implements Identificavel{
 	@GeneratedValue
 	@Id
 	private Long id;
@@ -22,7 +22,7 @@ public class Restricoes {
 			inverseJoinColumns = @JoinColumn(name = "comida_id"))	
 	private Set<Comida>Ter;
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 	public void setId(Long id) {
