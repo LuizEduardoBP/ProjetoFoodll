@@ -15,5 +15,5 @@ public class Main {
 		Cliente find = dao.find(Cliente.class, c2.getId());
 		System.out.println(find.getNome());
 	}
-	
+
 }
