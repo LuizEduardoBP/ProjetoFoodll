@@ -32,7 +32,7 @@ public class Main {
 		a2.setIngredientes("Tomate, Queijo, frango, Alface");
 		a2.setPreco(30);
 		a2.setRestricoes("Alergia a tomate, Alergia a fermento, Alergia a temperos");
-		dao1.save(a);
+		dao1.save(a2);
 		
 		Comida find1 = dao1.find(Comida.class, c2.getId());
 		System.out.println(find1.getNome());
@@ -45,15 +45,15 @@ public class Main {
 		
 		Restricoes r2 = new Restricoes();
 		r2.setTipo("Alergia a tomate");
-		dao3.save(r); 
+		dao3.save(r2); 
 		
 		Restricoes r3 = new Restricoes();
 		r3.setTipo("Alergia a temperos");
-		dao3.save(r);
+		dao3.save(r3);
 		
 		Restricoes r4 = new Restricoes();
 		r4.setTipo("Alergia a fermento");
-		dao3.save(r); 
+		dao3.save(r4); 
 
 		Restricoes find2 = dao3.find(Restricoes.class, r.getId());
 	}
