@@ -13,43 +13,53 @@ public class Comida implements Identificavel {
 	private String restricoes;
 	private Integer preco;
 	private String ingredientes;
-	
+
 	public String getNome() {
 		return nome;
 	}
-	
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getRestricoes() {
 		return restricoes;
 	}
+
 	public void setRestricoes(String restricoes) {
 		this.restricoes = restricoes;
 	}
+
 	public Integer getPreco() {
 		return preco;
 	}
+
 	public void setPreco(Integer preco) {
 		this.preco = preco;
 	}
+
 	public String getIngredientes() {
 		return ingredientes;
 	}
+
 	public void setIngredientes(String ingredientes) {
 		this.ingredientes = ingredientes;
 	}
+
 	@Override
 	public String toString() {
 		return "Comida [id=" + id + ", nome=" + nome + ", restricoes=" + restricoes + ", preco=" + preco
 				+ ", ingredientes=" + ingredientes + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -61,6 +71,7 @@ public class Comida implements Identificavel {
 		result = prime * result + ((restricoes == null) ? 0 : restricoes.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -110,6 +121,64 @@ public class Comida implements Identificavel {
 	public Comida() {
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public Restaurante addRestaurante(Long id, String nome, int telefone) throws IdInvalidoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removRestaurante(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Restricoes addrestricoes(long id, String tipo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removRestricoes(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Comida addComida(Long id, String nome, String ingredientes) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removComida(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Cliente addCliente(Long id, String nome) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removeCliente(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Cardapio addCardapio(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removcardapio(long id) {
+		// TODO Auto-generated method stub
+		
+	}
 }
-
-

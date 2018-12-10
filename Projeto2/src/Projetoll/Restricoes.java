@@ -10,40 +10,44 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Restricoes implements Identificavel{
+public class Restricoes implements Identificavel {
 	@GeneratedValue
 	@Id
 	private Long id;
 	private String tipo;
 	@ManyToMany
-	@JoinTable(
-			name = "restricoes_comida",
-			joinColumns = @JoinColumn(name = "restricoes_id"),
-			inverseJoinColumns = @JoinColumn(name = "comida_id"))	
-	private Set<Comida>Ter;
+	@JoinTable(name = "restricoes_comida", joinColumns = @JoinColumn(name = "restricoes_id"), inverseJoinColumns = @JoinColumn(name = "comida_id"))
+	private Set<Comida> Ter;
 
 	public long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getTipo() {
 		return tipo;
 	}
+
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
 	public Set<Comida> getTer() {
 		return Ter;
 	}
+
 	public void setTer(Set<Comida> ter) {
 		Ter = ter;
 	}
+
 	@Override
 	public String toString() {
 		return "Restricoes [id=" + id + ", tipo=" + tipo + ", Ter=" + Ter + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -53,6 +57,7 @@ public class Restricoes implements Identificavel{
 		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -79,17 +84,76 @@ public class Restricoes implements Identificavel{
 			return false;
 		return true;
 	}
+
 	public Restricoes(Long id, String tipo, Set<Comida> ter) {
 		super();
 		this.id = id;
 		this.tipo = tipo;
 		Ter = ter;
 	}
+
 	public Restricoes() {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public Restaurante addRestaurante(Long id, String nome, int telefone) throws IdInvalidoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	
+	@Override
+	public void removRestaurante(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Restricoes addrestricoes(long id, String tipo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removRestricoes(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Comida addComida(Long id, String nome, String ingredientes) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removComida(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Cliente addCliente(Long id, String nome) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removeCliente(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Cardapio addCardapio(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removcardapio(long id) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

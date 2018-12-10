@@ -68,6 +68,56 @@ public class Endereco implements Identificavel{
 		this.rua = rua;
 		this.numero = numero;
 	}
+	@Override
+	public Restaurante addRestaurante(Long id, String nome, int telefone) throws IdInvalidoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void removRestaurante(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public Restricoes addrestricoes(long id, String tipo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void removRestricoes(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public Comida addComida(Long id, String nome, String ingredientes) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void removComida(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public Cliente addCliente(Long id, String nome) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void removeCliente(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public Cardapio addCardapio(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void removcardapio(long id) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }
